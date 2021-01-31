@@ -17,14 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
+from dom2.settings import SITE_URL_PREFIX
 from news.views import NewsViewSet
 
 router = routers.DefaultRouter()
 router.register(r'news', NewsViewSet)
 
 urlpatterns = [
-    path('api/admin/', admin.site.urls),
-    path('api/api-auth/', include('rest_framework.urls')),
-    path('api/media/', include('media.urls')),
-    path('api/', include(router.urls))
+    path(SITE_URL_PREFIX + 'admin/', admin.site.urls),
+    path(SITE_URL_PREFIX + 'api-auth/', include('rest_framework.urls')),
+    path(SITE_URL_PREFIX + 'media/', include('media.urls')),
+    path(SITE_URL_PREFIX + '', include(router.urls))
 ]

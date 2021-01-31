@@ -139,3 +139,6 @@ STATIC_ROOT = 'static'
 
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
+
+
+SITE_URL_PREFIX = 'api/'
