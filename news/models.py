@@ -3,6 +3,11 @@ from django.db import models
 
 
 # Create your models here.
+from django.urls import reverse
+
+from dom2.settings import MEDIA_URL
+
+
 class Novelty(models.Model):
     title = models.CharField(max_length=100, verbose_name="Заголовок", null=False, blank=True)
     image = models.FileField(upload_to='images/', unique=True, verbose_name='Картинка', null=True, blank=True)
@@ -12,3 +17,7 @@ class Novelty(models.Model):
 
     def __str__(self):
         return f'{self.title}: {self.creator.username}'
+
+    @property
+    def image_url(self):
+        return MEDIA_URL + self.image.name
