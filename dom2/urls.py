@@ -23,7 +23,7 @@ router = routers.DefaultRouter()
 router.register(r'api/news', NewsViewSet)
 
 urlpatterns = [
-    path('api/admin/', admin.site.urls),
+    path('api/admin', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('media/', include('media.urls')),
     path('', include(router.urls))
