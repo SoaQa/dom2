@@ -20,11 +20,11 @@ from rest_framework import routers
 from news.views import NewsViewSet
 
 router = routers.DefaultRouter()
-router.register(r'api/news', NewsViewSet)
+router.register(r'news', NewsViewSet)
 
 urlpatterns = [
     path('api/admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('media/', include('media.urls')),
-    path('', include(router.urls))
+    path('api/api-auth/', include('rest_framework.urls')),
+    path('api/media/', include('media.urls')),
+    path('api/', include(router.urls))
 ]
