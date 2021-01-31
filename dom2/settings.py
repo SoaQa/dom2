@@ -26,7 +26,7 @@ SECRET_KEY = 'wr6^_zbagr-of6so_$jt7*9ygiv3o0hynb@@lg8+b^4qdiqey3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '188.116.156.73']
+ALLOWED_HOSTS = ['soaqa.me', 'localhost', '127.0.0.1', '188.116.156.73']
 
 
 # Application definition
