@@ -20,7 +20,7 @@ from rest_framework import routers
 from news.views import NewsViewSet
 
 router = routers.DefaultRouter()
-router.register(r'api/news', NewsViewSet)
+router.register(r'news', NewsViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
