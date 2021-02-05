@@ -21,11 +21,12 @@ from dom2.settings import SITE_URL_PREFIX
 from news.views import NewsViewSet
 
 router = routers.DefaultRouter()
-router.register(r'news', NewsViewSet)
+router.register(r'news', NewsViewSet, basename='Novelty')
 
 urlpatterns = [
     path(SITE_URL_PREFIX + 'admin/', admin.site.urls),
     path(SITE_URL_PREFIX + 'api-auth/', include('rest_framework.urls')),
     path(SITE_URL_PREFIX + 'media/', include('media.urls')),
-    path(SITE_URL_PREFIX + '', include(router.urls))
+    path(SITE_URL_PREFIX, include(router.urls))
 ]
+print(router.urls)
